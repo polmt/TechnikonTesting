@@ -17,11 +17,11 @@ or with the ```play``` button of the Docker Desktop App.
 
 #### Application
 
-Run the ```TechnikonApplication``` Java class from
+Clone the repository from this link:
 
     https://github.com/dmavrogiorgis/Technikon
 
-to initialize the Application.
+and run the ```TechnikonApplication``` Java class to initialize the Application.
 
 ---
 
