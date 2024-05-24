@@ -7,14 +7,10 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class DeletePropertyByPropertyIdAndByOwnerId {
-
     static String propertyOwnerId = "21";
     static String propertyId = "3";
-
     public static void main(String[] args) {
-
         try {
-
             String url = "http://localhost:8080/api/owner/" + propertyOwnerId + "/property/" + propertyId;
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -28,7 +24,6 @@ public class DeletePropertyByPropertyIdAndByOwnerId {
             } else {
                 System.out.println("\u001B[1m\u001B[31mTest Failed\u001B[0m - Property deletion failed for the owner (Status code: Expected: 200 - Actual: " + response.statusCode() + ")");
             }
-
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

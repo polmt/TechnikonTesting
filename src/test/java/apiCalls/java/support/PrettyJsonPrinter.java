@@ -1,7 +1,6 @@
 package apiCalls.java.support;
 
 public class PrettyJsonPrinter {
-
     public static void printJson(String pjson) {
         pjson = pjson.trim().substring(1, pjson.length() - 1);
         String[] keyValuePairs = pjson.split(",");

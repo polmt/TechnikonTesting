@@ -10,11 +10,8 @@ import java.net.http.HttpRequest.BodyPublishers;
 import static apiCalls.java.support.PrettyJsonPrinter.printJson;
 
 public class PostPropertyOwner1 {
-
     public static void main(String[] args) {
-
         try {
-
             String url = "http://localhost:8080/api/owner";
             String json = """
                     {
@@ -37,7 +34,6 @@ public class PostPropertyOwner1 {
                     .POST(BodyPublishers.ofString(json))
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
             if (response.statusCode() == 201) {
                 System.out.println("\u001B[1m\u001B[32mTest Passed\u001B[0m - Property Owner successfully created (Status code: Expected: 201 - Actual: " + response.statusCode() + ")");
             } else if (response.statusCode() == 409) {
@@ -45,7 +41,6 @@ public class PostPropertyOwner1 {
             } else {
                 System.out.println("\u001B[1m\u001B[31mTest Failed\u001B[0m - Property Owner creation failed (Status code: Expected: 201 - Actual: " + response.statusCode() + ")");
             }
-
             if (!response.body().isEmpty()) {
                 System.out.println("\u001B[1m\u001B[32mTest Passed\u001B[0m (Response body: not empty)");
                 System.out.println("Response body:");
@@ -53,16 +48,12 @@ public class PostPropertyOwner1 {
             } else {
                 System.out.println("\u001B[1m\u001B[31mTest Failed\u001B[0m (Response body: empty)");
             }
-
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
-
     public int getStatusCodePostPropertyOwner1() {
-
         try {
-
             String uri = "http://localhost:8080/api/owner";
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -74,8 +65,6 @@ public class PostPropertyOwner1 {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-
         return 0;
-
     }
 }

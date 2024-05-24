@@ -7,13 +7,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class DeletePropertyOwnerByTin {
-
     static String tinNumber = "123456789";
-
     public static void main(String[] args) {
-
         try {
-
             String url = "http://localhost:8080/api/owner/delete/" + tinNumber;
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -27,12 +23,10 @@ public class DeletePropertyOwnerByTin {
             } else {
                 System.out.println("\u001B[1m\u001B[31mTest Failed\u001B[0m - Property Owner deletion failed (Status code: Expected: 200 - Actual: " + response.statusCode() + ")");
             }
-
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
-
     public int getStatusCodeDeletePropertyOwnerByTin() {
         try {
             String uri = "http://localhost:8080/api/owner/delete/" + tinNumber;

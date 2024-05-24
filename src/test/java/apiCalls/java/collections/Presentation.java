@@ -11,9 +11,7 @@ import apiCalls.java.propertyOwner.PutPropertyOwner1ByTin;
 import apiCalls.java.repair.PostRepairForPropertyByPropertyId;
 
 public class Presentation {
-
     public static void main(String[] args) {
-
         System.out.println("\u001B[1mTesting Main Page Functionality \"Contact Us Button\"\u001B[0m");
         GetContactUs.main(args);
         System.out.println();
@@ -74,7 +72,6 @@ public class Presentation {
         System.out.println();
         waitFor();
     }
-
     private static void waitFor() {
         try {
             Thread.sleep(500);

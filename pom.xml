@@ -15,9 +15,9 @@
     </properties>
 
     <dependencies>
-        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
-        <!--%% IMPORT TESTING TOOL DEPENDENCIES - BEGINNING %%-->
-        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!--%% IMPORT TESTING TOOL DEPENDENCIES - BEGINNING %%-->
+<!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         <!--JUNIT-->
         <dependency>
             <groupId>junit</groupId>
@@ -67,8 +67,8 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
-        <!--%% IMPORT TESTING TOOL DEPENDENCIES - END %%-->
-        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+<!--%% IMPORT TESTING TOOL DEPENDENCIES - END %%-->
+<!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
     </dependencies>
 </project>

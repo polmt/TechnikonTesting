@@ -6,9 +6,7 @@ import apiCalls.java.propertyOwner.PutPropertyOwner1ByTin;
 import apiCalls.java.propertyOwner.GetPropertyOwnerById;
 
 public class PropertyOwnerApiCalls {
-
     public static void main(String[] args) {
-
         System.out.println("\u001B[1m1) Running PostPropertyOwner\u001B[0m");
         PostPropertyOwner1.main(args);
         System.out.println();
@@ -34,7 +32,6 @@ public class PropertyOwnerApiCalls {
         System.out.println();
         waitFor();
     }
-
     private static void waitFor() {
         try {
             Thread.sleep(500);
