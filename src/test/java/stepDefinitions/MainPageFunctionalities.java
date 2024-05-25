@@ -30,57 +30,55 @@ public class MainPageFunctionalities {
     public void mainToLogInPageSuccessfulTransition() {
         WebElement fromMainToLogInSuccessTrans = driver.findElement(By.id("logInPageLogInTitle"));
         String logInPageTitle = fromMainToLogInSuccessTrans.getText();
-
         Assert.assertEquals("Login", logInPageTitle);
     }
 
-
-
     @When("I click the Sign Up Button to Navigate to the Sign Up Page")
-    public void mainToSignUpPageClickLogIn() {
-        WebElement clickSignUpFromMainToLogIn = driver.findElement(By.id("mainPageSignUpButton"));
-        clickSignUpFromMainToLogIn.click();
+    public void mainToSignUpPageClickSignUp() {
+        WebElement clickSignUpFromMainToSignUp = driver.findElement(By.id("mainPageSignUpButton"));
+        clickSignUpFromMainToSignUp.click();
     }
 
     @Then("I am Redirected to the Sign Up Page or the Sign Up Window Pops Up")
     public void mainToSignUpPageSuccessfulTransition() {
-        WebElement fromMainToSignUpSuccessTrans = driver.findElement(By.id("logInPageSignUpTitle"));
+        WebElement fromMainToSignUpSuccessTrans = driver.findElement(By.id("signUpPageSignUpTitle"));
         String signUpPageTitle = fromMainToSignUpSuccessTrans.getText();
-
-        Assert.assertEquals("Login", signUpPageTitle);
+        Assert.assertEquals("Sign Up", signUpPageTitle);
     }
-
-
 
     @Given("I am at the Log In Page")
     public void beingAtLogInPage() {
-
+        WebElement logInPageTitle = driver.findElement(By.id("logInPageLogInTitle"));
+        Assert.assertEquals("Login", logInPageTitle.getText());
     }
 
     @When("I click the Sign Up Button")
     public void clickSignUpFromLogIn() {
-
+        WebElement clickSignUpFromLogIn = driver.findElement(By.id("logInPageSignUpButton"));
+        clickSignUpFromLogIn.click();
     }
 
     @Then("I am Redirected to the Sign Up Page or the Sign Up Window Pops Up")
     public void fromLogInToSignUpRedirect() {
-
+        WebElement signUpPageTitle = driver.findElement(By.id("signUpPageSignUpTitle"));
+        Assert.assertEquals("Sign Up", signUpPageTitle.getText());
     }
-
-
 
     @Given("I am at the Sign Up Page")
     public void beingAtSignUpPage() {
-
+        WebElement signUpPageTitle = driver.findElement(By.id("signUpPageSignUpTitle"));
+        Assert.assertEquals("Sign Up", signUpPageTitle.getText());
     }
 
     @When("I click the Log In Button")
     public void clickLogInFromSignUp() {
-
+        WebElement clickLogInFromSignUp = driver.findElement(By.id("signUpPageLogInButton"));
+        clickLogInFromSignUp.click();
     }
 
     @Then("I am Redirected to the Log In Page or the Log In Window Pops Up")
     public void fromSignUpToLogInRedirect() {
-
+        WebElement logInPageTitle = driver.findElement(By.id("logInPageLogInTitle"));
+        Assert.assertEquals("Login", logInPageTitle.getText());
     }
 }

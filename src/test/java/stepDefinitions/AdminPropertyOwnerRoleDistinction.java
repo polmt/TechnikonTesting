@@ -10,102 +10,55 @@ import org.openqa.selenium.WebElement;
 
 import static stepDefinitions.TestSetup.driver;
 
-
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//%% Feature: Administrator And Property Owner Role Distinction %%
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 public class AdminPropertyOwnerRoleDistinction {
 
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// %%%%%% Scenario: Administrator Log-In %%%%%%%%%%%%
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-// Given The Log-In Page is displayed
-
     @Given("The Log-In Page is displayed")
-    public void loginButtonIsDisplayed() {
+    public void loginPageIsDisplayed() {
         WebElement loginPage = driver.findElement(By.id("logInPageLogInTitle"));
         String loginPageTitle = loginPage.getText();
-
         Assert.assertEquals("Login page", loginPageTitle);
     }
 
-// When I enter the Credentials
-
     @When("I enter the Credentials {string} {string}")
-    public void enterPropertyOwnerCredentials(String username, String password) {
-        WebElement adminUsernameField = driver.findElement(By.id("logInUsername"));
-        adminUsernameField.sendKeys(username);
-
-        WebElement adminPasswordField = driver.findElement(By.id("logInPassword"));
-        adminPasswordField.sendKeys(password);
+    public void enterCredentials(String username, String password) {
+        WebElement usernameField = driver.findElement(By.id("logInUsername"));
+        usernameField.sendKeys(username);
+        WebElement passwordField = driver.findElement(By.id("logInPassword"));
+        passwordField.sendKeys(password);
     }
-
-// And I click the Log-In Button
 
     @And("I click the Log-In Button")
     public void clickLoginButton() {
-        WebElement adminUsernameField = driver.findElement(By.id("logInPageEmailField"));
-        adminUsernameField.click();
+        WebElement loginButton = driver.findElement(By.id("logInPageEmailField"));
+        loginButton.click();
     }
-
-// Then I am Logged-In as an Administrator
 
     @Then("I am Logged-In as an Administrator")
     public void loggedInAsAdmin() {
-        WebElement adminLogInReturnMessage = driver.findElement(By.id("successfulAdminLogIn"));
-        String adminLogInReturnMessageStr = adminLogInReturnMessage.getText();
-
-        Assert.assertEquals("Successful Log-In. Welcome Admin!", adminLogInReturnMessageStr);
+        WebElement adminLogInMessage = driver.findElement(By.id("successfulAdminLogIn"));
+        String adminLogInMessageStr = adminLogInMessage.getText();
+        Assert.assertEquals("Successful Log-In. Welcome Admin!", adminLogInMessageStr);
     }
-
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// %%%%%% Scenario: Property Owner Log-In %%%%%%%%%%%
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-// %%%%%% Given The Log-In Page is displayed %%%%%%
-// %% The same with Scenario: Administrator Log-In %%
-
-// %%%%%% When I enter the Credentials %%%%%%
-// %% The same with Scenario: Administrator Log-In %%
-
-// %%%%%% And I click the Log-In Button %%%%%%
-// %% The same with Scenario: Administrator Log-In %%
-
-// Then I am Logged-In as Property Owner
 
     @Then("I am Logged-In as a Property Owner")
     public void loggedInAsPropertyOwner() {
-        WebElement propertyOwnerLogInReturnMessage = driver.findElement(By.id("successfulPropertyOwnerLogIn"));
-        String propertyOwnerLogInReturnMessageStr = propertyOwnerLogInReturnMessage.toString();
-
-        Assert.assertEquals("Successful Log-In. Welcome Property Owner!", propertyOwnerLogInReturnMessageStr);
+        WebElement propertyOwnerLogInMessage = driver.findElement(By.id("successfulPropertyOwnerLogIn"));
+        String propertyOwnerLogInMessageStr = propertyOwnerLogInMessage.getText();
+        Assert.assertEquals("Successful Log-In. Welcome Property Owner!", propertyOwnerLogInMessageStr);
     }
-
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// %%%% Scenario: Administrator Access Level %%%%%%%%
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-// Given I am Logged-In as an Administrator and I want to explore all Property Owners' Properties
 
     @Given("I am Logged-In as an Administrator and I want to explore all Property Owners' Properties")
     public void adminAccessLevel() {
         WebElement adminMainPage = driver.findElement(By.id("adminMainPage"));
         String adminMainPageStr = adminMainPage.getText();
-
         Assert.assertEquals("Administrator Main Page", adminMainPageStr);
     }
-
-// When I try to Access the List of other Property Owner Properties
 
     @When("I try to Access the List of other Property Owner Properties")
     public void adminAccessPropertyList() {
         WebElement someoneElsesPropertyAdminView = driver.findElement(By.id("userListViewUserDetails1"));
         someoneElsesPropertyAdminView.click();
     }
-
-// Then I can see All the Properties present in the Database from All the Property Owners
 
     @Then("I can see All the Properties present in the Database from All the Property Owners")
     public void adminViewEntirePropertyDatabase() {
@@ -118,38 +71,79 @@ public class AdminPropertyOwnerRoleDistinction {
         Assert.assertEquals("userListViewUserDetailsLocation2", someoneElsesPropertyLocation1AdminView);
     }
 
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-// %%%% Scenario: Property Owner Access Level %%%%%%%
-//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-// Given I am Logged-In as a Property Owner and I want to explore all of My Properties
-
     @Given("I am Logged-In as a Property Owner and I want to explore all of My Properties")
     public void propertyOwnerAccessLevel() {
-        WebElement propertyOwnerMainPage = driver.findElement(By.id("adminMainPage"));
+        WebElement propertyOwnerMainPage = driver.findElement(By.id("propertyOwnerMainPage"));
         String propertyOwnerMainPageStr = propertyOwnerMainPage.getText();
-
-        Assert.assertEquals("Administrator Main Page", propertyOwnerMainPageStr);
+        Assert.assertEquals("Property Owner Main Page", propertyOwnerMainPageStr);
     }
-
-// When I try to Access the List of My Properties
 
     @When("I try to Access the List of My Properties")
     public void propertyOwnerAccessPropertyList() {
-        WebElement myPropertiesPropertyOwnerView = driver.findElement(By.id("myPropertiesViewDetails1"));
-        myPropertiesPropertyOwnerView.click();
+        WebElement myPropertiesView = driver.findElement(By.id("myPropertiesViewDetails1"));
+        myPropertiesView.click();
     }
-
-// Then I can see All of My Properties present in the Database
 
     @Then("I can see All of My Properties present in the Database")
     public void propertyOwnerViewMyPropertiesDatabase() {
-        WebElement myPropertyIdPropertyOwnerView = driver.findElement(By.id("someoneElsesPropertyId1AdminView"));
-        String myPropertyId1PropertyOwnerView = myPropertyIdPropertyOwnerView.getText();
-        Assert.assertEquals("userListViewUserDetailsId1", myPropertyId1PropertyOwnerView);
+        WebElement myPropertyIdView = driver.findElement(By.id("myPropertyId1View"));
+        String myPropertyId1View = myPropertyIdView.getText();
+        Assert.assertEquals("myPropertyId1", myPropertyId1View);
 
-        WebElement myPropertyLocationPropertyOwnerView = driver.findElement(By.id("someoneElsesPropertyLocation2AdminView"));
-        String myPropertyLocation2PropertyOwnerView = myPropertyLocationPropertyOwnerView.getText();
-        Assert.assertEquals("userListViewUserDetailsLocation2", myPropertyLocation2PropertyOwnerView);
+        WebElement myPropertyLocationView = driver.findElement(By.id("myPropertyLocation2View"));
+        String myPropertyLocation2View = myPropertyLocationView.getText();
+        Assert.assertEquals("myPropertyLocation2", myPropertyLocation2View);
+    }
+
+    @Given("I am Logged-In as an Administrator and I want to Delete a Property Owner who has a Property Registered to their account")
+    public void adminDeletePropertyOwnerSetup() {
+        WebElement adminMainPage = driver.findElement(By.id("adminMainPage"));
+        String adminMainPageStr = adminMainPage.getText();
+        Assert.assertEquals("Administrator Main Page", adminMainPageStr);
+    }
+
+    @When("I click the Delete Property Owner Account Button")
+    public void clickDeletePropertyOwnerButton() {
+        WebElement deletePropertyOwnerButton = driver.findElement(By.id("deletePropertyOwnerAccountButton"));
+        deletePropertyOwnerButton.click();
+    }
+
+    @And("I confirm that I want to Delete that Property Owner Account")
+    public void confirmDeletePropertyOwnerAccount() {
+        WebElement confirmDeleteButton = driver.findElement(By.id("confirmDeleteButton"));
+        confirmDeleteButton.click();
+    }
+
+    @Then("The Property Owner Account is Deactivated")
+    public void propertyOwnerAccountDeactivated() {
+        WebElement deactivationMessage = driver.findElement(By.id("deactivationMessage"));
+        String deactivationMessageStr = deactivationMessage.getText();
+        Assert.assertEquals("Property Owner Account has been deactivated.", deactivationMessageStr);
+    }
+
+    @Given("I am Logged-In as an Property Owner and I want to Delete My Account that has a Property Registered to their account")
+    public void propertyOwnerDeleteAccountSetup() {
+        WebElement propertyOwnerMainPage = driver.findElement(By.id("propertyOwnerMainPage"));
+        String propertyOwnerMainPageStr = propertyOwnerMainPage.getText();
+        Assert.assertEquals("Property Owner Main Page", propertyOwnerMainPageStr);
+    }
+
+    @When("I click the Delete My Account Button")
+    public void clickDeleteMyAccountButton() {
+        WebElement deleteMyAccountButton = driver.findElement(By.id("deleteMyAccountButton"));
+        deleteMyAccountButton.click();
+    }
+
+    @And("I confirm that I want to Delete My Account")
+    public void confirmDeleteMyAccount() {
+        WebElement confirmDeleteButton = driver.findElement(By.id("confirmDeleteButton"));
+        confirmDeleteButton.click();
+    }
+
+    @Then("My Account is Deactivated")
+    public void myAccountDeactivated() {
+        WebElement deactivationMessage = driver.findElement(By.id("deactivationMessage"));
+        String deactivationMessageStr = deactivationMessage.getText();
+        Assert.assertEquals("Your account has been deactivated.", deactivationMessageStr);
     }
 }
