@@ -6,6 +6,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import static apiCalls.java.support.PrettyJsonPrinter.printJson;
+
 public class GetPropertiesByOwnerId {
     public static void main(String[] args) {
         String propertyOwnerId = "21";
@@ -31,16 +33,6 @@ public class GetPropertiesByOwnerId {
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-        }
-    }
-    private static void printJson(String pjson) {
-        pjson = pjson.trim().substring(1, pjson.length() - 1);
-        String[] keyValuePairs = pjson.split(",");
-        for (String pair : keyValuePairs) {
-            String[] keyValue = pair.split(":");
-            String key = keyValue[0].trim();
-            String value = keyValue[1].trim();
-            System.out.println(key + ": " + value);
         }
     }
 }

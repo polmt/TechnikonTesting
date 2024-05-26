@@ -5,7 +5,10 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+
 import java.net.http.HttpRequest.BodyPublishers;
+import static apiCalls.java.support.PrettyJsonPrinter.printJson;
+
 
 public class PostRepairForPropertyByPropertyId {
     public static void main(String[] args) {
@@ -49,16 +52,6 @@ public class PostRepairForPropertyByPropertyId {
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-        }
-    }
-    private static void printJson(String pjson) {
-        pjson = pjson.trim().substring(1, pjson.length() - 1);
-        String[] keyValuePairs = pjson.split(",");
-        for (String pair : keyValuePairs) {
-            String[] keyValue = pair.split(":");
-            String key = keyValue[0].trim();
-            String value = keyValue[1].trim();
-            System.out.println(key + ": " + value);
         }
     }
 }

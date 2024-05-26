@@ -18,7 +18,6 @@ public class DeletePropertyByPropertyIdAndByOwnerId {
                     .DELETE()
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
             if (response.statusCode() == 200) {
                 System.out.println("\u001B[1m\u001B[32mTest Passed\u001B[0m - Property successfully deleted for the owner (Status code: Expected: 200 - Actual: " + response.statusCode() + ")");
             } else {
