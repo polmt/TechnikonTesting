@@ -134,7 +134,7 @@ public class AdminPropertyOwnerRoleDistinction {
         confirmDeleteButton.click();
     }
 
-    @Then("The Property Owner Account is Deactivated")
+    @Then("The Property Owner Account is Deleted")
     public void propertyOwnerAccountDeactivated() {
         WebElement deactivationMessage = driver.findElement(By.id("deactivationMessage"));
         String deactivationMessageStr = deactivationMessage.getText();
@@ -164,7 +164,7 @@ public class AdminPropertyOwnerRoleDistinction {
         confirmDeleteButton.click();
     }
 
-    @Then("My Account is Deactivated")
+    @Then("My Account is Deleted")
     public void myAccountDeactivated() {
         WebElement deactivationMessage = driver.findElement(By.id("deactivationMessage"));
         String deactivationMessageStr = deactivationMessage.getText();

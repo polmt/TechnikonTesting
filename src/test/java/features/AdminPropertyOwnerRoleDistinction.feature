@@ -26,10 +26,10 @@ Feature: Administrator And Property Owner Role Distinction
     Given I am Logged-In as an Administrator and I want to Delete a Property Owner who has a Property Registered to their account
     When I click the Delete Property Owner Account Button
     And I confirm that I want to Delete that Property Owner Account
-    Then The Property Owner Account is Deactivated
+    Then The Property Owner Account is Deleted
 
     Scenario: Property Owner Deletes Their Account
     Given I am Logged-In as an Property Owner and I want to Delete My Account that has a Property Registered to their account
     When I click the Delete My Account Button
     And I confirm that I want to Delete My Account
-    Then My Account is Deactivated
+    Then My Account is Deleted
