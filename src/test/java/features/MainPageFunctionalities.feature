@@ -15,7 +15,7 @@ Feature: Main Page Functionalities
     When I click the Sign Up Button
     Then I am Redirected to the Sign Up Page or the Sign Up Window Pops Up
 
-  Scenario: Navigate From The Log In To The Sign Up Page
+  Scenario: Navigate From The Sign Up To The Log In Page
     Given I am at the Sign Up Page
     When I click the Log In Button
     Then I am Redirected to the Log In Page or the Log In Window Pops Up

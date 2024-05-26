@@ -13,6 +13,9 @@ import static stepDefinitions.TestSetup.driver;
 
 public class MainPageFunctionalities {
 
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Navigate From The Main Page To The Log In Page %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("The Application is Up And Running")
     public void applicationUpRunning() {
         GetHome getHome = new GetHome();
@@ -33,6 +36,10 @@ public class MainPageFunctionalities {
         Assert.assertEquals("Login", logInPageTitle);
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Navigate From The Main Page To The Sign Up Page %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @When("I click the Sign Up Button to Navigate to the Sign Up Page")
     public void mainToSignUpPageClickSignUp() {
         WebElement clickSignUpFromMainToSignUp = driver.findElement(By.id("mainPageSignUpButton"));
@@ -46,6 +53,10 @@ public class MainPageFunctionalities {
         Assert.assertEquals("Sign Up", signUpPageTitle);
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Navigate From The Log In To The Sign Up Page %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("I am at the Log In Page")
     public void beingAtLogInPage() {
         WebElement logInPageTitle = driver.findElement(By.id("logInPageLogInTitle"));
@@ -64,6 +75,10 @@ public class MainPageFunctionalities {
         Assert.assertEquals("Sign Up", signUpPageTitle.getText());
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Navigate From The Log In To The Sign Up Page %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("I am at the Sign Up Page")
     public void beingAtSignUpPage() {
         WebElement signUpPageTitle = driver.findElement(By.id("signUpPageSignUpTitle"));

@@ -15,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationRunningCheck {
 
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Get A 200 Response Code From A Get Http Request %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("That the Endpoint is Up and Running")
     public void apiRunning() {
         GetHome getHome = new GetHome();
@@ -22,7 +25,7 @@ public class ApplicationRunningCheck {
         assertEquals(200, getHome.getStatusCodeGetHome());
     }
 
-    @When("We make a GET Request for the Property Owner with TIN {string}")
+    @When("I make a GET Request for the Property Owner with TIN {string}")
     public void apiCall(String tinNumber) throws Exception {
         String uri = "http://localhost:8080/api/owner/search?tin=" + tinNumber;
         HttpClient client = HttpClient.newHttpClient();
@@ -34,7 +37,7 @@ public class ApplicationRunningCheck {
         Assert.assertEquals(200, response.statusCode());
     }
 
-    @Then("We Get a response that contains the Details of the Property Owner with TIN {string}")
+    @Then("I Get a response that contains the Details of the Property Owner with TIN {string}")
     public void assertResponseBody(String tinNumber) throws Exception {
         String uri = "http://localhost:8080/api/owner/search?tin=" + tinNumber;
         HttpClient client = HttpClient.newHttpClient();

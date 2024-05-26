@@ -12,6 +12,9 @@ import static stepDefinitions.TestSetup.driver;
 
 public class AdminPropertyOwnerRoleDistinction {
 
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Administrator Log-In %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("The Log-In Page is displayed")
     public void loginPageIsDisplayed() {
         WebElement loginPage = driver.findElement(By.id("logInPageLogInTitle"));
@@ -40,6 +43,11 @@ public class AdminPropertyOwnerRoleDistinction {
         Assert.assertEquals("Successful Log-In. Welcome Admin!", adminLogInMessageStr);
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%%%%%%%%%% Scenario: Administrator Log-In %%%%%%%%%%%
+    //%%% (first 3 steps are the same with admin log-in) %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Then("I am Logged-In as a Property Owner")
     public void loggedInAsPropertyOwner() {
         WebElement propertyOwnerLogInMessage = driver.findElement(By.id("successfulPropertyOwnerLogIn"));
@@ -47,6 +55,10 @@ public class AdminPropertyOwnerRoleDistinction {
         Assert.assertEquals("Successful Log-In. Welcome Property Owner!", propertyOwnerLogInMessageStr);
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Administrator Access Level %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("I am Logged-In as an Administrator and I want to explore all Property Owners' Properties")
     public void adminAccessLevel() {
         WebElement adminMainPage = driver.findElement(By.id("adminMainPage"));
@@ -71,6 +83,10 @@ public class AdminPropertyOwnerRoleDistinction {
         Assert.assertEquals("userListViewUserDetailsLocation2", someoneElsesPropertyLocation1AdminView);
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Property Owner Access Level %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("I am Logged-In as a Property Owner and I want to explore all of My Properties")
     public void propertyOwnerAccessLevel() {
         WebElement propertyOwnerMainPage = driver.findElement(By.id("propertyOwnerMainPage"));
@@ -95,6 +111,10 @@ public class AdminPropertyOwnerRoleDistinction {
         Assert.assertEquals("myPropertyLocation2", myPropertyLocation2View);
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Administrator Deletes Any Property Owner Account %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("I am Logged-In as an Administrator and I want to Delete a Property Owner who has a Property Registered to their account")
     public void adminDeletePropertyOwnerSetup() {
         WebElement adminMainPage = driver.findElement(By.id("adminMainPage"));
@@ -121,6 +141,10 @@ public class AdminPropertyOwnerRoleDistinction {
         Assert.assertEquals("Property Owner Account has been deactivated.", deactivationMessageStr);
     }
 
+
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    //%%% Scenario: Property Owner Deletes Their Account %%%
+    //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @Given("I am Logged-In as an Property Owner and I want to Delete My Account that has a Property Registered to their account")
     public void propertyOwnerDeleteAccountSetup() {
         WebElement propertyOwnerMainPage = driver.findElement(By.id("propertyOwnerMainPage"));
