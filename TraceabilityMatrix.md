@@ -1,22 +1,35 @@
-| **Requirement ID**  | **Requirement Description**                          | **Test Suite ID** |  **Status**  | **Remarks**             |
-|---------------------|------------------------------------------------------|-------------------|-------------|--------------------------|
-| REQ-001             | Support creation of a Property Owner with fields     | TS01              |  Complete    | 9/9 Passed              |
-| REQ-002             | Ensure Uniqueness of TIN, email and username when creating Property Owner | TS02   | Not Started |                |
-| REQ-003             | Validate format of inserted attributes when creating Property Owner | TS03  | Not Started |                       |
-| REQ-004             | User-friendly UI for creating Property Owner         | TS04              | Not Started |                          |
-| REQ-005             | Search Property Owner by TIN and email               | TS05              | Not Started |                          |
-| REQ-006             | Update address, email, password of Property Owner    | TS06              | Not Started |                          |
-| REQ-007             | Deletion/deactivation of Property Owner              | TS07              | Not Started |                          |
-| REQ-008             | Creation of properties with specific fields          | TS08              | Not Started |                          |
-| REQ-009             | Search properties by various criteria                | TS09              | Not Started |                          |
-| REQ-010             | Update property details                              | TS10              | Not Started |                          |
-| REQ-011             | Deletion/deactivation of properties                  | TS11              | Not Started |                          |
-| REQ-012             | Creation of property repairs with specific fields    | TS12              | Not Started |                          |
-| REQ-013             | Search property repairs by various criteria          | TS13              | Not Started |                          |
-| REQ-014             | Update property repair details                       | TS14              | Not Started |                          |
-| REQ-015             | Deletion/deactivation of property repairs            | TS15              | Not Started |                          |
-| REQ-016             | Generate reports on registered entities              | TS16              | Not Started |                          |
-| REQ-017             | Implement push notifications for status changes      | TS17              | Not Started |                          |
-| REQ-018             | Frontend using ReactJS with proper UI/UX             | TS18              | Not Started |                          |
-| REQ-019             | Non-functional requirements                          | N/A               | N/A         | Coding standards         |
-| REQ-020             | Use cases for data population and usage simulation   | N/A               | N/A         | Data population/testing  |
+| **Requirement ID**  | **Requirement Description**                                                  | **Test Suite ID** | **Status**  | **Remarks**              |
+|---------------------|------------------------------------------------------------------------------|-------------------|-------------|--------------------------|
+| REQ-001             | Creation of a Property Owner with specific fields                            | TS01              | Complete    | 9/9 Passed               |
+| REQ-002             | When creating a Property Owner, ensure uniqueness of TIN, email and username | TS02              | Complete    | 3/3 Passed               |
+| REQ-003             | When creating a Property Owner, validate format of inserted attributes       | TS03              | Complete    | 5/5 Passed               |
+| REQ-004             | When creating a Property Owner, ensure user-friendly UI with clear error messages | TS04              | Pending     | 8/14 Passed              |
+| REQ-005             | Search Property Owner by TIN, email and username                             | TS05              | Complete    | 6/6 Passed               |
+| REQ-006             | Update address, email, password of Property Owner                            | TS06              | Complete    | 6/6 Passed               |
+| REQ-007             | When updating a Property Owner, validate format of inserted attributes       | TS07              | Complete    | 3/3 Passed               |
+| REQ-008             | Permanent Deletion of Property Owner related to no Properties                | TS08              | Complete    | 3/3 Passed               |
+| REQ-009             | Deactivation of Property Owner                                               | TS09              | Complete    | 1/1 Passed               |
+| REQ-010             | Creation of a Property with specific fields                                  | TS10              | Pending     | 7/8 Passed               |
+| REQ-011             | When creating a Property, ensure uniqueness of PIN                           | TS11              | Complete    | 1/1 Passed               |
+| REQ-012             | Creation of property repairs validate format of inserted fields              | TS12              | Complete    | 8/8 Passed               |
+| REQ-013             | When creating a Property, ensure user-friendly UI with clear error messages  | TS13              | Blocked     | 0/9 Passed               |
+| REQ-014             | Search Property by PIN or TIN                                                | TS14              | Complete    | 10/10 Passed             |
+| REQ-015             | System allows the update of a Property's attributes                          | TS15              | Not Started |                          |
+| REQ-016             | When updating a Property, validate format of inserted attributes             | TS16              | Not Started |                          |
+| REQ-017             | System allows permanent Deletion of a Property related to no Repairs         | TS17              | Not Started |                          |
+| REQ-018             | System allows Deactivation of a Property                                     | TS18              | Not Started |                          |
+| REQ-019             | Creation of a Repair with specific attributes                                | TS19              | Complete    | 9/9 Passed               |
+| REQ-020             | Creation of Repair validates format of inserted fields                       | TS20              | Complete    | 14/14 Passed             |
+| REQ-021             | When creating a Repair, ensure user-friendly UI with clear error messages    | TS21              | Complete    | 
+| REQ-022             | System must support the search for a Repair by certain attributes            | TS22              | Complete    | 21/21 Passed
+| REQ-023             | System must allow the update of a Repair's attributes                        | TS23              | Complete    | 
+| REQ-024             | When updating a Repair, the system must validate the format of the inserted attributes    | TS24              | Complete    | 
+| REQ-025             | System must support the permanent deletion of a Repair with a status of "PENDING".    | TS25              | Complete    | 
+| REQ-026             | System must support the deactivation of a Repair    | TS26              | Complete    | 
+| REQ-027             | System must allow admins access to all data    | TS27              | Complete    | 
+| REQ-028             | System must allow users access to their own data   | TS28              | Complete    | 
+| REQ-029             | Administrators have access to Property Owners, Properties and Repairs, Log-Ins and Application Traffic within a given period | TS29              | Complete    | 
+| REQ-030             | System must send a push notification: repair status for their property changes, their data has been changed by the administrator | TS30              | Complete    | 
+| REQ-031             | system must send a push notification to the administrator when: a new property owner self-registers, a new property is added by a user, the status of any user's repair changes  | TS31              | Complete    | 
+
+
