@@ -17,11 +17,7 @@ or with the ```play``` button of the Docker Desktop App.
 
 #### Application
 
-Clone the repository from this link:
-
-    https://github.com/dmavrogiorgis/Technikon
-
-and run the ```TechnikonApplication``` Java class to initialize the Application.
+Run the ```TechnikonApplication``` Java class to initialize the Application.
 
 ---
 
@@ -31,3 +27,26 @@ View the list of available endpoint from this Swagger URL:
 
     http://localhost:8080/swagger-ui/index.html
 
+---
+
+#### Front-End
+
+Navigate to the path of the ```front-end``` of the directory:
+
+    cd path_to_Technikon\front-end
+
+for example:
+
+    cd C:\IntelliJprojects\Technikon\front-end
+
+and run:
+
+    npm i
+
+and then:
+
+    npm run dev
+
+Then the Application URL is exposed:
+
+     http://localhost:5173/
