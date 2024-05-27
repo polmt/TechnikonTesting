@@ -1,23 +1,22 @@
-| **Requirement ID**  | **Requirement Description**                          | **Design Specification** | **Test Case ID** | **Test Description**                                         | **Status**  | **Remarks**              |
-|---------------------|------------------------------------------------------|--------------------------|------------------|--------------------------------------------------------------|-------------|--------------------------|
-| REQ-001             | Support creation of a Property Owner with fields     | Design Spec 1            | TS01             | Verify Property Owner creation with valid fields             | Not Started |                          |
-| REQ-002             | Validate TIN when creating Property Owner            | Design Spec 2            | TS02             | Verify TIN validation for Property Owner                     | Not Started |                          |
-| REQ-003             | Validate email when creating Property Owner          | Design Spec 3            | TS03             | Verify email validation for Property Owner                   | Not Started |                          |
-| REQ-004             | User-friendly UI for creating Property Owner         | Design Spec 4            | TS04             | Verify user-friendly UI for creating Property Owner          | Not Started |                          |
-| REQ-005             | Search Property Owner by TIN and email               | Design Spec 5            | TS05             | Verify search by TIN and email for Property Owner            | Not Started |                          |
-| REQ-006             | Update address, email, password of Property Owner    | Design Spec 6            | TS06             | Verify updating details of Property Owner                    | Not Started |                          |
-| REQ-007             | Deletion/deactivation of Property Owner              | Design Spec 7            | TS07             | Verify deletion/deactivation of Property Owner               | Not Started |                          |
-| REQ-008             | Creation of properties with specific fields          | Design Spec 8            | TS08             | Verify property creation with valid fields                   | Not Started |                          |
-| REQ-009             | Search properties by various criteria                | Design Spec 9            | TS09             | Verify property search by various criteria                   | Not Started |                          |
-| REQ-010             | Update property details                              | Design Spec 10           | TS10             | Verify updating property details                             | Not Started |                          |
-| REQ-011             | Deletion/deactivation of properties                  | Design Spec 11           | TS11             | Verify deletion/deactivation of properties                   | Not Started |                          |
-| REQ-012             | Creation of property repairs with specific fields    | Design Spec 12           | TS12             | Verify property repair creation with valid fields            | Not Started |                          |
-| REQ-013             | Search property repairs by various criteria          | Design Spec 13           | TS13             | Verify property repair search by various criteria            | Not Started |                          |
-| REQ-014             | Update property repair details                       | Design Spec 14           | TS14             | Verify updating property repair details                      | Not Started |                          |
-| REQ-015             | Deletion/deactivation of property repairs            | Design Spec 15           | TS15             | Verify deletion/deactivation of property repairs             | Not Started |                          |
-| REQ-016             | Generate reports on registered entities              | Design Spec 16           | TS16             | Verify generating reports on registered entities             | Not Started |                          |
-| REQ-017             | Implement push notifications for status changes      | Design Spec 17           | TS17             | Verify push notifications for repair status and user changes | Not Started |                          |
-| REQ-018             | Frontend using ReactJS with proper UI/UX             | Design Spec 18           | TS18             | Verify frontend property display using ReactJS               | Not Started |                          |
-| REQ-019             | Non-functional requirements                          | Design Spec 19           | N/A              | N/A                                                          | N/A         | Coding standards         |
-| REQ-020             | Use cases for data population and usage simulation   | Design Spec 20           | N/A              | N/A                                                          | N/A         | Data population/testing  |
-
+| **Requirement ID**  | **Requirement Description**                          | **Test Suite ID** |  **Status**  | **Remarks**             |
+|---------------------|------------------------------------------------------|-------------------|-------------|--------------------------|
+| REQ-001             | Support creation of a Property Owner with fields     | TS01              |  Complete    | 9/9 Passed              |
+| REQ-002             | Ensure Uniqueness of TIN, email and username when creating Property Owner | TS02   | Not Started |                |
+| REQ-003             | Validate format of inserted attributes when creating Property Owner | TS03  | Not Started |                       |
+| REQ-004             | User-friendly UI for creating Property Owner         | TS04              | Not Started |                          |
+| REQ-005             | Search Property Owner by TIN and email               | TS05              | Not Started |                          |
+| REQ-006             | Update address, email, password of Property Owner    | TS06              | Not Started |                          |
+| REQ-007             | Deletion/deactivation of Property Owner              | TS07              | Not Started |                          |
+| REQ-008             | Creation of properties with specific fields          | TS08              | Not Started |                          |
+| REQ-009             | Search properties by various criteria                | TS09              | Not Started |                          |
+| REQ-010             | Update property details                              | TS10              | Not Started |                          |
+| REQ-011             | Deletion/deactivation of properties                  | TS11              | Not Started |                          |
+| REQ-012             | Creation of property repairs with specific fields    | TS12              | Not Started |                          |
+| REQ-013             | Search property repairs by various criteria          | TS13              | Not Started |                          |
+| REQ-014             | Update property repair details                       | TS14              | Not Started |                          |
+| REQ-015             | Deletion/deactivation of property repairs            | TS15              | Not Started |                          |
+| REQ-016             | Generate reports on registered entities              | TS16              | Not Started |                          |
+| REQ-017             | Implement push notifications for status changes      | TS17              | Not Started |                          |
+| REQ-018             | Frontend using ReactJS with proper UI/UX             | TS18              | Not Started |                          |
+| REQ-019             | Non-functional requirements                          | N/A               | N/A         | Coding standards         |
+| REQ-020             | Use cases for data population and usage simulation   | N/A               | N/A         | Data population/testing  |
