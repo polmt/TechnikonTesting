@@ -19,7 +19,7 @@ public class PostRepairForPropertyByPropertyId {
                     {
                       "typeOfRepair": "PAINTING",
                       "description": "Paint the living room and bathroom.",
-                      "repairDate": "2024-05-24",
+                      "repairDate": "2024-05-27",
                       "propertyId": 3
                     }
                     """;

@@ -8,7 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class TestSetup {
 
     public static WebDriver driver;
-    public static String baseUrl = "http://localhost:";
+    public static String baseUrl = "http://localhost:5173";
 
     @Before
     public void setUp() {
